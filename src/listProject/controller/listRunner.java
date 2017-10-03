@@ -4,8 +4,8 @@ public class listRunner
 {
 	public static void main(String[] args) 
 	{
-		listController runner = new listController();
-		runner.start();
+		listController myApp = new listController();
+		myApp.start();
 
 	}
 }
