@@ -11,13 +11,18 @@ public class Donut
 	//Initialization with nothing passed in
 	public Donut() 
 	{
-		hasSprinkles = false;
-		isGlazed = true;
-		shape = "circle";
-		flavor = "tasty";
-		holeCount = 1;
+		this.hasSprinkles = false;
+		this.isGlazed = false;
+		this.shape = "circle";
+		this.flavor = "plain";
+		this.holeCount = 0;
 	}
-	
+	//Initialization with changed flavor
+	public Donut(String flavor)
+	{
+		this();
+		this.flavor = flavor; 
+	}
 	//initialization with everything passed in
 	public Donut(boolean hasSprinkles, boolean isGlazed, String shape, String flavor, int holeCount)
 	{
@@ -26,5 +31,11 @@ public class Donut
 		this.shape = shape;
 		this.flavor = flavor;
 		this.holeCount = holeCount;
+	}
+	public String toString()
+	{
+		String description = "This donut tastes "+ flavor;
+		
+		return description;
 	}
 }
