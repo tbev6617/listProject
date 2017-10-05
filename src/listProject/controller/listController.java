@@ -44,7 +44,9 @@ public class listController
 	{
 		for (Donut item : donutList)
 		{
+			String santa = "🎅🏼, 🎅🏽, 🎅🏾, 🎅🏿";
 			popup.displayText(item.toString());
+			System.out.println(santa);
 		}
 	}
 }
