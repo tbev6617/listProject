@@ -32,7 +32,7 @@ public class listController
 		Donut jellyDonut = new Donut("jelly-filled");
 		Donut oldDonut = new Donut("stale");
 		Donut glazedDonut = new Donut(false, true, "round", "tasty", 1);
-		Donut fancyDonut = new Donut(true, true, "triangle", "fancy", 1);
+		Donut fancyDonut = new Donut(true, true, "octagon", "fancy", 1);
 		donutList.add(jellyDonut);
 		donutList.add(oldDonut);
 		donutList.add(fancyDonut);
@@ -42,11 +42,25 @@ public class listController
 	
 	private void showTheList() 
 	{
+		String favorite = "jelly-filled";
 		for (Donut item : donutList)
 		{
-			String santa = "🎅🏼, 🎅🏽, 🎅🏾, 🎅🏿";
+			String santas = "🎅🏼, 🎅🏽, 🎅🏾, 🎅🏿";
+			String currentFlavor = item.getFlavor();
+			
+			if (currentFlavor.equals(favorite))
+			{
+				for (int i = 0; i < 5; i += 1)
+				{
+					popup.displayText(favorite + " is the best flavor ever");
+					System.out.println(santas);
+				}
+			}
+			for (int i = 0; i < currentFlavor.length(); i += 1) 
+			{
+				popup.displayText(currentFlavor.substring(i, i + 1));
+			}
 			popup.displayText(item.toString());
-			System.out.println(santa);
 		}
 	}
 }
