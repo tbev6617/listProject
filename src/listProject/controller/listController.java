@@ -37,7 +37,8 @@ public class listController
 		donutList.add(oldDonut);
 		donutList.add(fancyDonut);
 		donutList.add(glazedDonut);
-		showTheList();
+		//showTheList();
+		changeTheList();
 	}
 	
 	private void showTheList() 
@@ -62,5 +63,16 @@ public class listController
 			}
 			popup.displayText(item.toString());
 		}
+	}
+	private void changeTheList()
+	{
+		popup.displayText("The list is " + donutList.size() + " donuts long.");
+		Donut removed = donutList.remove(0);
+		popup.displayText(removed.getFlavor() + " was removed from the list.");
+		popup.displayText("Now the list is only " + donutList.size() + " donuts long.");
+		
+		popup.displayText("The list still contains " + donutList.size()  + " items");
+		removed = donutList.set(3, new Donut());
+		popup.displayText("The " + removed.getFlavor() + " donut is now plain");
 	}
 }
