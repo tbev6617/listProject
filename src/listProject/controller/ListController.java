@@ -42,6 +42,15 @@ public class ListController
 		changeTheList();
 		showTheList();
 		addMoreFish();
+		
+		popup.displayText("I have now eaten all of the donuts");
+		donutList.clear();
+		popup.displayText("I become a donut zombie");
+		
+		
+		Donut zombieDonut = new Donut("undead");
+		donutList.add(zombieDonut);
+		showTheList();
 	}
 	
 	private void showTheList() 
