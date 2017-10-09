@@ -37,8 +37,11 @@ public class listController
 		donutList.add(oldDonut);
 		donutList.add(fancyDonut);
 		donutList.add(glazedDonut);
-		//showTheList();
+		donutList.add(new Donut(false, false, "blob", "trashy", 5));
+		showTheList();
 		changeTheList();
+		showTheList();
+		addMoreFish();
 	}
 	
 	private void showTheList() 
@@ -46,21 +49,21 @@ public class listController
 		String favorite = "jelly-filled";
 		for (Donut item : donutList)
 		{
-			String santas = "🎅🏼, 🎅🏽, 🎅🏾, 🎅🏿";
-			String currentFlavor = item.getFlavor();
-			
-			if (currentFlavor.equals(favorite))
-			{
-				for (int i = 0; i < 5; i += 1)
-				{
-					popup.displayText(favorite + " is the best flavor ever");
-					System.out.println(santas);
-				}
-			}
-			for (int i = 0; i < currentFlavor.length(); i += 1) 
-			{
-				popup.displayText(currentFlavor.substring(i, i + 1));
-			}
+//			String santas = "🎅🏼, 🎅🏽, 🎅🏾, 🎅🏿";
+//			String currentFlavor = item.getFlavor();
+//			
+//			if (currentFlavor.equals(favorite))
+//			{
+//				for (int i = 0; i < 5; i += 1)
+//				{
+//					popup.displayText(favorite + " is the best flavor ever");
+//					System.out.println(santas);
+//				}
+//			}
+//			for (int i = 0; i < currentFlavor.length(); i += 1) 
+//			{
+//				popup.displayText(currentFlavor.substring(i, i + 1));
+//			}
 			popup.displayText(item.toString());
 		}
 	}
@@ -74,5 +77,28 @@ public class listController
 		popup.displayText("The list still contains " + donutList.size()  + " items");
 		removed = donutList.set(3, new Donut());
 		popup.displayText("The " + removed.getFlavor() + " donut is now plain");
+	}
+	public void addMoreFish()
+	{
+		popup.displayText("Sea creatures deserve to be donuts too");
+		Donut fishDonut = new Donut("fishy");
+		Donut krabbyPattyDonut = new Donut("like a Krabby Patty");
+		donutList.add(fishDonut);
+		donutList.add(new Donut("salty"));
+		donutList.add(2, krabbyPattyDonut);
+		donutList.add(new Donut("barnacle-like"));
+		showTheListBackwards();
+		popup.displayText("The jelly-filled donut is now a jellyfish donut");
+		donutList.set(0, new Donut("jellyfishy"));
+		showTheList();
+	}
+	public void showTheListBackwards()
+	{
+		popup.displayText("The list size is " + donutList.size());
+		for (int i = donutList.size() - 1; i >= 0; i = i - 1)
+		{
+			Donut currentDonut = donutList.get(i);
+			popup.displayText(currentDonut.toString());
+		}
 	}
 }
