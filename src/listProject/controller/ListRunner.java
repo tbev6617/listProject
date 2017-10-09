@@ -1,10 +1,10 @@
 package listProject.controller;
 
-public class listRunner 
+public class ListRunner 
 {
 	public static void main(String[] args) 
 	{
-		listController myApp = new listController();
+		ListController myApp = new ListController();
 		myApp.start();
 
 	}

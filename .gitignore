@@ -1,4 +1,5 @@
 .DS_Store
 bin/
 *.Class
+*.class
 bin/listProject/controller/listController.class

@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import listProject.model.Donut; 
 import listProject.view.PopupDisplay;
 
-public class listController 
+public class ListController 
 {
 	//make my list
 	private List<Donut> donutList;
 	private PopupDisplay popup;
 	
-	public listController()
+	public ListController()
 	{
 		//make my list an arrayList
 		donutList = new ArrayList<Donut>();
@@ -100,5 +100,13 @@ public class listController
 			Donut currentDonut = donutList.get(i);
 			popup.displayText(currentDonut.toString());
 		}
+	}
+	public ArrayList<Donut> getDonutList()
+	{
+		return (ArrayList<Donut>) donutList;
+	}
+	public PopupDisplay getDisplay()
+	{
+		return popup;
 	}
 }
