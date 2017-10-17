@@ -6,6 +6,5 @@ public class ListRunner
 	{
 		ListController myApp = new ListController();
 		myApp.start();
-
 	}
 }
