@@ -55,7 +55,7 @@ public class ListController
 	
 	private void showTheList() 
 	{
-		String favorite = "jelly-filled";
+//		String favorite = "jelly-filled";
 		for (Donut item : donutList)
 		{
 //			String santas = "🎅🏼, 🎅🏽, 🎅🏾, 🎅🏿";
